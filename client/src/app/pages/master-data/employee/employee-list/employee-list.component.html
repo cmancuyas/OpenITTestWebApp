@@ -1,0 +1,69 @@
+<div class="card">
+  <div class="card-header">
+    Employee
+    <a routerLink="/master-data/employee/add" class="btn btn-primary">Add</a>
+  </div>
+
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">FirstName</th>
+          <th scope="col">LastName</th>
+          <th scope="col">Department</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="
+            let employee of employees
+              | slice : (page - 1) * pageSize : page * pageSize
+          "
+        >
+          <td>{{ employee.id }}</td>
+          <td>{{ employee.firstName }}</td>
+          <td>{{ employee.lastName }}</td>
+          <td>{{ employee.department.name }}</td>
+          <td>
+            <button
+              [routerLink]="['/master-data/employee/edit', employee.id]"
+              cButton
+              class="btn btn-primary"
+              type="submit"
+              value="Edit"
+            >
+              Edit
+            </button>
+            <button
+              [routerLink]="['/master-data/employee/details', employee.id]"
+              cButton
+              class="btn btn-success"
+              type="submit"
+              value="Details"
+            >
+              Details
+            </button>
+            <button
+              [routerLink]="['/master-data/employee/delete', employee.id]"
+              cButton
+              class="btn btn-danger"
+              type="submit"
+              value="Delete"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <ngb-pagination
+      [pageSize]="pageSize"
+      [collectionSize]="employees.length"
+      [(page)]="page"
+      aria-label="Default pagination"
+    ></ngb-pagination>
+    <a routerLink="/" class="btn btn-primary">Back</a>
+  </div>
+</div>

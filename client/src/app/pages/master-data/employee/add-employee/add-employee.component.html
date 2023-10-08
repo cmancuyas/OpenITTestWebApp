@@ -1,0 +1,289 @@
+{{ addEmployeeForm.value | json }}
+<div class="card">
+  <div class="card-body">
+    <form
+      [formGroup]="addEmployeeForm"
+      (ngSubmit)="onSubmit()"
+      autocomplete="on"
+    >
+      <div class="text-center mb-4">
+        <h3 class="mb-3 font-weight-normal">Add Employee</h3>
+      </div>
+
+      <!-- Employee First Name -->
+      <div class="form-floating mb-3">
+        <input
+          formControlName="firstName"
+          type="text"
+          placeholder="Please enter firstName"
+          class="form-control"
+          [class.is-invalid]="
+            submitted && addEmployeeForm.get('firstName')?.errors
+          "
+        />
+        <label for="firstName">FirstName</label>
+        <span
+          class="text-danger"
+          *ngIf="
+            submitted && addEmployeeForm.get('firstName')?.hasError('required')
+          "
+        >
+          FirstName is required
+        </span>
+      </div>
+
+      <!-- Employee Last Name -->
+      <div class="form-floating mb-3">
+        <input
+          formControlName="lastName"
+          type="text"
+          placeholder="Please enter lastName"
+          class="form-control"
+          [class.is-invalid]="
+            submitted && addEmployeeForm.get('lastName')?.errors
+          "
+        />
+        <label for="lastName">LastName</label>
+        <span
+          class="text-danger"
+          *ngIf="
+            submitted && addEmployeeForm.get('lastName')?.hasError('required')
+          "
+        >
+          LastName is required
+        </span>
+      </div>
+
+      <!-- Department Id -->
+      <div class="form-floating mb-3">
+        <select
+          formControlName="deptId"
+          class="form-select"
+          id="floatingSelect"
+          aria-label="Floating label select example"
+        >
+          <option selected>Choose Department</option>
+          <option
+            *ngFor="let department of departments; let i = index"
+            [ngValue]="department.id"
+          >
+            {{ department.name }}
+          </option>
+        </select>
+        <label for="floatingSelect">Department</label>
+      </div>
+
+      <!-- Email Address -->
+      <div class="form-floating mb-3">
+        <input
+          formControlName="emailAddress"
+          type="text"
+          placeholder="Please enter your Email Address"
+          class="form-control"
+          [class.is-invalid]="submitted && addEmployeeForm.get('emailAddress')?.errors"
+        />
+        <label for="emailAddress">Email Address</label>
+        <span
+          class="text-danger"
+          *ngIf="
+            submitted && addEmployeeForm.get('emailAddress')?.hasError('required')
+          "
+        >
+          Email Address is required
+        </span>
+      </div>
+      <!-- Phone Number -->
+      <div class="form-floating mb-3">
+        <input
+          formControlName="phoneNumber"
+          type="text"
+          placeholder="Please enter your Phone Number"
+          class="form-control"
+          [class.is-invalid]="submitted && addEmployeeForm.get('phoneNumber')?.errors"
+        />
+        <label for="phoneNumber">Phone Number</label>
+        <span
+          class="text-danger"
+          *ngIf="
+            submitted && addEmployeeForm.get('phoneNumber')?.hasError('required')
+          "
+        >
+          Phone Number is required
+        </span>
+      </div>
+
+      <!-- House Number -->
+      <div class="form-floating mb-3">
+        <input
+          formControlName="houseNumber"
+          type="text"
+          placeholder="Please enter your House Number"
+          class="form-control"
+          [class.is-invalid]="
+            submitted && addEmployeeForm.get('houseNumber')?.errors
+          "
+        />
+        <label for="houseNumber">House Number</label>
+        <span
+          class="text-danger"
+          *ngIf="
+            submitted && addEmployeeForm.get('houseNumber')?.hasError('required')
+          "
+        >
+          House Number is required
+        </span>
+      </div>
+
+      <!-- Street -->
+      <div class="form-floating mb-3">
+        <input
+          formControlName="street"
+          type="text"
+          placeholder="Please enter your Street"
+          class="form-control"
+          [class.is-invalid]="
+            submitted && addEmployeeForm.get('street')?.errors
+          "
+        />
+        <label for="street">Street</label>
+        <span
+          class="text-danger"
+          *ngIf="
+            submitted && addEmployeeForm.get('street')?.hasError('required')
+          "
+        >
+          Street is required
+        </span>
+      </div>
+
+      <!-- Brgy -->
+      <div class="form-floating mb-3">
+        <input
+          formControlName="brgy"
+          type="text"
+          placeholder="Please enter your Brgy"
+          class="form-control"
+          [class.is-invalid]="submitted && addEmployeeForm.get('brgy')?.errors"
+        />
+        <label for="brgy">Brgy</label>
+        <span
+          class="text-danger"
+          *ngIf="submitted && addEmployeeForm.get('brgy')?.hasError('required')"
+        >
+          Brgy is required
+        </span>
+      </div>
+
+      <!-- City -->
+      <div class="form-floating mb-3">
+        <input
+          formControlName="city"
+          type="text"
+          placeholder="Please enter your City"
+          class="form-control"
+          [class.is-invalid]="submitted && addEmployeeForm.get('city')?.errors"
+        />
+        <label for="city">City</label>
+        <span
+          class="text-danger"
+          *ngIf="submitted && addEmployeeForm.get('city')?.hasError('required')"
+        >
+          City is required
+        </span>
+      </div>
+
+      <!-- AddressLine1 -->
+      <div class="form-floating mb-3">
+        <input
+          formControlName="addressLine1"
+          type="text"
+          placeholder="Please enter your AddressLine1"
+          class="form-control"
+          [class.is-invalid]="
+            submitted && addEmployeeForm.get('addressLine1')?.errors
+          "
+        />
+        <label for="addressLine1">AddressLine1</label>
+        <span
+          class="text-danger"
+          *ngIf="
+            submitted &&
+            addEmployeeForm.get('addressLine1')?.hasError('required')
+          "
+        >
+          AddressLine1 is required
+        </span>
+      </div>
+
+      <!-- AddressLine2 -->
+      <div class="form-floating mb-3">
+        <input
+          formControlName="addressLine2"
+          type="text"
+          placeholder="Please enter your AddressLine2"
+          class="form-control"
+          [class.is-invalid]="
+            submitted && addEmployeeForm.get('addressLine2')?.errors
+          "
+        />
+        <label for="addressLine2">AddressLine2</label>
+        <span
+          class="text-danger"
+          *ngIf="
+            submitted && addEmployeeForm.get('addressLine2')?.hasError('required')
+          "
+        >
+          AddressLine2 is required
+        </span>
+      </div>
+
+      <!-- Postal Code -->
+      <div class="form-floating mb-3">
+        <input
+          formControlName="postalCode"
+          type="text"
+          placeholder="Please enter your Postal Code"
+          class="form-control"
+          [class.is-invalid]="
+            submitted && addEmployeeForm.get('postalCode')?.errors
+          "
+        />
+        <label for="postalCode">Postal Code</label>
+        <span
+          class="text-danger"
+          *ngIf="
+            submitted &&
+            addEmployeeForm.get('postalCode')?.hasError('required')
+          "
+        >
+          Postal Code is required
+        </span>
+      </div>
+
+      <!-- Get All messages -->
+      <div class="form-floating" *ngIf="messages.length > 0">
+        <app-validation-messages
+          [errorMessages]="messages"
+        ></app-validation-messages>
+      </div>
+      <!-- Add Employee Button -->
+      <div>
+        <button
+          class="btn btn-primary"
+          type="submit"
+          [disabled]="addEmployeeForm.invalid"
+        >
+          Add
+        </button>
+        <!-- Back -->
+        <button
+          routerLink="/master-data/employee"
+          type="button"
+          class="btn btn-secondary"
+        >
+          Back
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

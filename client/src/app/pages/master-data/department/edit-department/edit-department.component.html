@@ -1,0 +1,45 @@
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="editDepartmentForm" (ngSubmit)="onSubmit()" autocomplete="on">
+      <div class="text-center mb-4">
+        <h3 class="mb-3 font-weight-normal">{{ editPage ? "Edit" : "Delete" }} Department</h3>
+      </div>
+
+      <!-- Department Name -->
+      <div class="form-floating mb-3">
+        <input
+          formControlName="name"
+          type="text"
+          placeholder="Please enter department name"
+          class="form-control"
+          [class.is-invalid]="submitted && editDepartmentForm.get('name')?.errors"
+        />
+        <label for="name">Name</label>
+        <span
+          class="text-danger"
+          *ngIf="submitted && editDepartmentForm.get('name')?.hasError('required')"
+        >
+          Department Name is required
+        </span>
+      </div>
+        <!-- Get All messages -->
+        <div class="form-floating" *ngIf="errorMessages.length > 0">
+          <app-validation-messages [errorMessages]="errorMessages"></app-validation-messages>
+        </div>
+      <!-- Add Department Button -->
+      <div>
+        <button
+          class="btn btn-primary"
+          type="submit"
+          [disabled]="editDepartmentForm.invalid"
+        >
+        {{ editPage ? "Save" : "Delete" }}
+        </button>
+        <!-- Back -->
+        <button routerLink="/master-data/department" type="button" class="btn btn-secondary">
+          Back
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+D:\Files\OpenIT\EmployeeManagementApp\EMA.API\EMA.Utility\bin\Debug\net7.0\EMA.Utility.deps.json
+D:\Files\OpenIT\EmployeeManagementApp\EMA.API\EMA.Utility\bin\Debug\net7.0\EMA.Utility.dll
+D:\Files\OpenIT\EmployeeManagementApp\EMA.API\EMA.Utility\bin\Debug\net7.0\EMA.Utility.pdb
+D:\Files\OpenIT\EmployeeManagementApp\EMA.API\EMA.Utility\obj\Debug\net7.0\EMA.Utility.GeneratedMSBuildEditorConfig.editorconfig
+D:\Files\OpenIT\EmployeeManagementApp\EMA.API\EMA.Utility\obj\Debug\net7.0\EMA.Utility.AssemblyInfoInputs.cache
+D:\Files\OpenIT\EmployeeManagementApp\EMA.API\EMA.Utility\obj\Debug\net7.0\EMA.Utility.AssemblyInfo.cs
+D:\Files\OpenIT\EmployeeManagementApp\EMA.API\EMA.Utility\obj\Debug\net7.0\EMA.Utility.csproj.CoreCompileInputs.cache
+D:\Files\OpenIT\EmployeeManagementApp\EMA.API\EMA.Utility\obj\Debug\net7.0\EMA.Utility.dll
+D:\Files\OpenIT\EmployeeManagementApp\EMA.API\EMA.Utility\obj\Debug\net7.0\refint\EMA.Utility.dll
+D:\Files\OpenIT\EmployeeManagementApp\EMA.API\EMA.Utility\obj\Debug\net7.0\EMA.Utility.pdb
+D:\Files\OpenIT\EmployeeManagementApp\EMA.API\EMA.Utility\obj\Debug\net7.0\ref\EMA.Utility.dll
